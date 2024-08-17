@@ -6,12 +6,17 @@ config();  //to access .env variables
 
 import { connnectToMongoDB } from './db/connectToDB.js';
 
+import cardRoute from './routers/card.route.js'
+
 const app = express();
 
 // To check server is running
 app.get("/",(req,res)=>{
     res.send("Hello from server : )");
 })
+
+
+app.use('/api/cards',cardRoute)
 
 const PORT = process.env.PORT || 5000;
 
