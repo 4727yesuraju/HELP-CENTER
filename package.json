@@ -1,0 +1,17 @@
+{
+  "name": "fullstack-assignment",
+  "version": "1.0.0",
+  "description": "## Instructions",
+  "main": "index.js",
+  "type" : "module",
+  "scripts": {
+     "start" : "node backend/server.js",
+     "watch" : "node --watch backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
