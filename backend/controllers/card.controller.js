@@ -38,18 +38,52 @@ export async function createCard(req,res,next){
 }
 
 
-export async function getCard(req,res,next){
+export async function getCards(req,res,next){
     try {
-        res.json({message : "getcard"})
+        const cards = await Card.find();
+
+        res.json({
+            success : true,
+            cards
+        });
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
 
-export async function getCards(req,res,next){
+
+export async function getCard(req,res,next){
     try {
-        res.json({message : "getcards"})
+        const {id} = req.params;
+        const card = await Card.findById(id);
+        if (!card) {
+            return next(errorHandler(404, 'Card not found!'));
+          }
+        res.json({
+            success : true,
+            card
+        })
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
+
+
+export async function deleteCard(req, res, next){
+    const {id} = req.params;
+    const card = await Card.findById(id);
+  
+    if (!card) {
+      return next(errorHandler(404, 'Card not found!'));
+    }
+
+    try {
+      await Card.findByIdAndDelete(id);
+      res.status(200).json({
+        success : true,
+        "message" : 'Card has been deleted!'
+      });
+    } catch (error) {
+      next(error);
+    }
+  };
