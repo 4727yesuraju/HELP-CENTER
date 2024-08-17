@@ -1,7 +1,7 @@
 import Card from "../models/card.model.js";
 import { errorHandler } from "../utils/error.js";
 
-
+import { data } from "../data/data.js";
 
 export async function createCard(req,res,next){
     try {
@@ -23,7 +23,7 @@ export async function createCard(req,res,next){
 
             res.status(201).json({
                 success : true,
-                data : {
+                card : {
                     _id : newCard._id,
                     title : newCard.title,
                     description : newCard.description
@@ -41,7 +41,7 @@ export async function createCard(req,res,next){
 export async function getCards(req,res,next){
     try {
         const cards = await Card.find();
-
+        
         res.json({
             success : true,
             cards
@@ -86,4 +86,4 @@ export async function deleteCard(req, res, next){
     } catch (error) {
       next(error);
     }
-  };
+};

@@ -18,8 +18,6 @@ app.get("/",(req,res)=>{
 })
 
 
-
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>{
@@ -33,10 +31,10 @@ app.use('/api/cards',cardRoute);
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
-    const message = err.message || 'Internal Server Error';
+    const error = err.message || 'Internal Server Error';
     return res.status(statusCode).json({
       success: false,
       statusCode,
-      message,
+      error,
     });
   });
