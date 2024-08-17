@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { MdCancel } from 'react-icons/md'
+import Loader from './Loader';
 
 function Form({setShow,setFilteredCards}) {
 
     const [formData,setFormData] = useState({});
+    const [loading,setLoading] = useState(false);
 
 
     const handleChange = (e)=>{
@@ -14,6 +16,7 @@ function Form({setShow,setFilteredCards}) {
     const handleCreatePost = async (e)=>{
         e.preventDefault();
         if(!formData.title || !formData.description) return toast.error("title and description fields are required");
+        setLoading(true);
 
         try {
             const res = await fetch('/api/cards/create',{
@@ -30,6 +33,8 @@ function Form({setShow,setFilteredCards}) {
             setShow(false);
         } catch (error) {
             toast.error(error.message);
+        }finally{
+            setLoading(false);
         }
     }
 
@@ -56,7 +61,11 @@ function Form({setShow,setFilteredCards}) {
            value={formData.description || ""}
            onChange={handleChange}
         />
-         <button className="bg-[aqua] text-black rounded-lg w-11/12 py-2 my-4" onClick={handleCreatePost}>submit</button>
+         <button type="submit" className="bg-black text-[aqua] rounded-lg w-11/12 py-2 my-4 font-bold text-center" onClick={handleCreatePost}>
+            {
+                loading ? <Loader /> : "submit"
+            }
+         </button>
      </form>
   )
 }

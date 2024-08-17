@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom'
+import Loader from '../compoments/Loader';
 
 function CardPage() {
     const {id} = useParams();
@@ -20,9 +21,7 @@ function CardPage() {
         getCard();
     },[id]);
 
-    if(!card) return <div className="flex-grow">
-                       loading...
-                    </div>;
+    if(!card) return <Loader width={120} height={120}/>
   return (
     <div className="flex-grow py-6 px-8">
       <h1 className="text-6xl font-bold text-center">{card.title}</h1>

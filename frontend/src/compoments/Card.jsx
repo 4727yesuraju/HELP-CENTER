@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { MdDelete } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-function Card({card,setFilteredCards}) {
+function Card({card,setFilteredCards,lastRef}) {
 
     const handleDelete = async (id,e)=>{
         e.preventDefault();
@@ -22,7 +22,7 @@ function Card({card,setFilteredCards}) {
         }
     }
   return (
-    <Link to={`/${card._id}`} className=" flex-grow-0 flex-shrink-0 cursor-pointer pl-4 relative border w-full sm:w-5/12 lg:w-4/12 border-black rounded-lg bg-black text-[aqua] shadow-lg  ">
+    <Link to={`/${card._id}`} ref={lastRef} className=" flex-grow-0 flex-shrink-0 cursor-pointer pl-4 relative border w-full sm:w-5/12 lg:w-4/12 border-black rounded-lg bg-black text-[aqua] shadow-lg  ">
         <button className="absolute top-2 right-2" onClick={(e)=>handleDelete(card._id,e)}>
             <MdDelete className="size-4 hover:text-red-500"/>
         </button>
