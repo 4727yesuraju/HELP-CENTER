@@ -1,6 +1,8 @@
 import express from 'express';
 import {config} from 'dotenv';
 config();  //to access .env variables
+import path from 'path';
+const __dirname = path.resolve();
 
 
 
@@ -27,6 +29,12 @@ app.listen(PORT,()=>{
 
 
 app.use('/api/cards',cardRoute);
+
+app.use(express.static(path.join(__dirname,'/frontend/dist')));
+
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname,'frontend',"dist",'index.html'));
+})
 
 
 app.use((err, req, res, next) => {
