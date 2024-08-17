@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../compoments/Card'
-import { MdCancel } from 'react-icons/md';
+import Card from '../compoments/Card';
 import { CiSquarePlus } from 'react-icons/ci';
 import Form from '../compoments/Form';
 
-function Main({cards,setCards,filteredCards,setFilteredCards}) {
+function Main({setCards,filteredCards,setFilteredCards}) {
 
-  console.log(cards);
-    
     const [show,setShow] = useState(false);
-    const [loading,setLoading] = useState(false);
 
     useEffect(()=>{
         const getCards = async()=>{

@@ -3,18 +3,16 @@ import toast from 'react-hot-toast';
 import { MdCancel } from 'react-icons/md'
 
 function Form({setShow,setFilteredCards}) {
-    const [loading, setLoading] = useState(false);
 
     const [formData,setFormData] = useState({});
 
-    console.log(formData);
 
     const handleChange = (e)=>{
          setFormData({...formData,[e.target.id] : e.target.value});
     }
+
     const handleCreatePost = async (e)=>{
         e.preventDefault();
-        setLoading(true);
         if(!formData.title || !formData.description) return toast.error("title and description fields are required");
 
         try {
@@ -27,7 +25,6 @@ function Form({setShow,setFilteredCards}) {
             })
             const data = await res.json();
             if(!data.success) return toast.error(data.error);
-            console.log("data ",data);
             setFilteredCards(prev=>[...prev,{...data.card}]);
             setFormData({});
             setShow(false);
