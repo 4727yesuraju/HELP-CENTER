@@ -7,8 +7,8 @@ function Main({setCards,filteredCards,setFilteredCards}) {
 
     const [show,setShow] = useState(false);
     const [count,setCount] = useState(0);
-    console.log("count : ",count);
 
+    console.log("count :",count);
     useEffect(()=>{
         const getCards = async()=>{
           try {
@@ -25,12 +25,14 @@ function Main({setCards,filteredCards,setFilteredCards}) {
     },[]);
 
     const lastRef = useRef();
+
     useEffect(()=>{
       setTimeout(()=>{
-        if(count>0) lastRef.current?.scrollIntoView({behavior : "smooth"});
+        if(count>2) lastRef.current?.scrollIntoView({behavior : "smooth"});
         setCount(count+1);
       },100)
-    },[filteredCards])
+    },[filteredCards]);
+
   return (
     <main className="flex-grow items-start relative flex flex-wrap justify-center gap-16 p-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
     {
