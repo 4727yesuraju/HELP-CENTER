@@ -16,9 +16,12 @@ function App() {
   return (
     <div className={`flex h-screen flex-col`}>
       <Header />
-      <Search setFilteredCards={setFilteredCards} cards={cards}/>
+     
       <Routes>
-         <Route path="/" element={ <Main filteredCards={filteredCards} setFilteredCards={setFilteredCards} setCards={setCards} /> } />
+         <Route path="/" element={ <>
+          <Search setFilteredCards={setFilteredCards} cards={cards}/>
+          <Main filteredCards={filteredCards} setFilteredCards={setFilteredCards} setCards={setCards} />
+          </> } />
          <Route path="/:id" element={<CardPage />} />
       </Routes>
      

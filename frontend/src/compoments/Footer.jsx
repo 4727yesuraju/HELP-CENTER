@@ -16,10 +16,10 @@ function Footer() {
             {
                 Object.keys(footerData).map(key=>(
                     <div key={key}>
-                        <h2 className="text-xl font-bold">{key}</h2>
+                        <h2 className="text-xl font-bold hover:text-slate-200 cursor-pointer">{key}</h2>
                         <ul>
                             {footerData[key].map(item=>(
-                                <li key={item}>{item}</li>
+                                <li key={item} className="hover:text-slate-200 cursor-pointer">{item}</li>
                             ))}
                         </ul>
                     </div>
@@ -28,14 +28,14 @@ function Footer() {
     
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2  w-full">
-            <TbBrandAbstract className="size-6 "/>
-            <span className="flex items-center gap-1 ">
+            <TbBrandAbstract className="size-6 hover:text-[aqua]  cursor-pointer"/>
+            <span className="flex items-center gap-1 hover:text-[aqua]  cursor-pointer">
                 <LiaCopyrightSolid className="size-6 "/> Copyright 2022
             </span>
-            <span>
+            <span className='hover:text-[aqua]  cursor-pointer'>
                 Abstract Studio Design, Inc.
             </span>
-            <span>
+            <span className="hover:text-[aqua]  cursor-pointer">
                 All rights reserved
             </span>
         </div>

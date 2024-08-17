@@ -15,9 +15,9 @@ const app = express();
 app.use(express.json()); // to parse req.body
 
 // To check server is running
-app.get("/",(req,res)=>{
-    res.send("Hello from server : )");
-})
+// app.get("/",(req,res)=>{
+//     res.send("Hello from server : )");
+// })
 
 
 const PORT = process.env.PORT || 5000;

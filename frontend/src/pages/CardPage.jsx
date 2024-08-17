@@ -11,7 +11,6 @@ function CardPage() {
             try {
                 const res = await fetch(`/api/cards/${id}`);
                 const data = await res.json();
-                console.log(data);
                 if(!data.success) return toast.error(data.error);
                 setCard(data.card);
             } catch (error) {
@@ -27,7 +26,7 @@ function CardPage() {
   return (
     <div className="flex-grow py-6 px-8">
       <h1 className="text-6xl font-bold text-center">{card.title}</h1>
-      <p>{card.description}</p>
+      <p className="text-slate-500 mt-4 text-center">{card.description}</p>
     </div>
   )
 }
