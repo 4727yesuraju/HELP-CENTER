@@ -14,8 +14,9 @@ const app = express();
 
 app.use(express.json()); // to parse req.body
 
-// To check server is running
-// app.get("/",(req,res)=>{
+// un commit it To check server is running
+///  http://localhost:5000/test
+// app.get("/test",(req,res)=>{
 //     res.send("Hello from server : )");
 // })
 
@@ -24,7 +25,7 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>{
     connnectToMongoDB();
-    console.log(`server is running at  ${"http://localhost"}:${PORT} :)`);
+    console.log(`server is running at  ${"http://localhost"}:${PORT}`);
 })
 
 
