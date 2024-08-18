@@ -9,7 +9,8 @@
    ```
 
 2. **command to run both frontend and api**
-   - In root folder run this command `npm run build`
+   - In root folder run this command `npm run build`.
+   - In root folder read `sample-file.env` and replace values.
    - After that run `npm run start` command.
    - In browser paste this url `http://localhost:5000`
    - Here almost completed. Below are optional.
