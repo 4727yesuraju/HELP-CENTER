@@ -2,6 +2,10 @@
 
 ## Instructions to run locally
 
+0. **Drive link: How to setup locally**
+   ```bash
+     https://drive.google.com/file/d/114-JSdRZRnbTIdnhfSEwkdOI3xgiVa9L/view?usp=drive_link
+   ```
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/4727yesuraju/HELP-CENTER
