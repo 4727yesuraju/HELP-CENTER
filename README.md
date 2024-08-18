@@ -28,5 +28,10 @@
 5. **Live demo is available here**
    - `https://yesuhelpcenter.onrender.com`
 
+6. **How can you implement shared functionality across a component tree?**
+   - By using `useState` hook i  implement shared functionality across a component tree
+
+7. **Why is the useState hook appropriate for handling state in a complex component**
+   - `useState` hook appropriate for handling state in a complex component because there are less then 2 compenents to prop drilling.
 ---
 
