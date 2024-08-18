@@ -12,7 +12,7 @@
    - In root folder run this command `npm run build`.
    - In root folder read `sample-file.env` and replace values.
    - After that run `npm run start` command.
-   - In browser paste this url `http://localhost:5000`
+   - In browser paste this url `http://localhost:PORT`. Here PORT value can seen in .env file.
    - Here almost completed. Below are optional.
 
 
