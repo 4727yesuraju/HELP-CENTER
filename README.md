@@ -25,7 +25,7 @@
    - In browser paste this url `http://localhost:3000/`
 
 5. **Live demo is available here**
-   - `https://help-center-9cwb.onrender.com/`
+   - `https://yesuhelpcenter.onrender.com`
 
 ---
 
