@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import Card from '../compoments/Card';
 import { CiSquarePlus } from 'react-icons/ci';
 import Form from '../compoments/Form';
+import Loader from '../compoments/Loader';
 
 function Main({setCards,filteredCards,setFilteredCards,search}) {
 
+    const [loading,setLoading] = useState(true);
     const [show,setShow] = useState(false);
     const [isScroll,setIsScroll] = useState(false);
 
@@ -18,6 +20,8 @@ function Main({setCards,filteredCards,setFilteredCards,search}) {
             setFilteredCards(data.cards);
           } catch (error) {
             toast.error(error.message);
+          }finally{
+            setLoading(false);
           }
         }
         getCards();
@@ -34,7 +38,10 @@ function Main({setCards,filteredCards,setFilteredCards,search}) {
   return (
     <main className="flex-grow items-start relative flex flex-wrap justify-center gap-16 p-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
       {
-        filteredCards.length === 0 && <h1 className="text-4xl font-bold text-center">no card is found 😢</h1>
+        loading && filteredCards.length === 0 && <Loader width="120" height="120"/>
+      }
+      {
+        !loading && filteredCards.length === 0 && <h1 className="text-4xl font-bold text-center">no card is found 😢</h1>
       }
     {
       filteredCards?.map(card=>(

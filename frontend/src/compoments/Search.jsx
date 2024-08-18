@@ -4,7 +4,7 @@ import { TiArrowRight } from "react-icons/ti";
 function Search({cards,setFilteredCards,search,setSearch}) {
     const handleSearch = (e)=>{
         e.preventDefault();
-        setFilteredCards(cards.filter(card=>card.title.toLocaleLowerCase().includes(search)))
+        setFilteredCards(cards.filter(card=>card.title.toLocaleLowerCase().includes(search)));
     }
   return (
     <div className="bg-[rgb(218,219,240)] flex flex-col items-center gap-4 py-10">
