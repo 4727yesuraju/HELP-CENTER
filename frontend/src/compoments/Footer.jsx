@@ -1,6 +1,7 @@
 import React from 'react'
 import { TbBrandAbstract } from "react-icons/tb";
-import { LiaCopyrightSolid } from "react-icons/lia";
+import { LiaCopyrightSolid } from "react-icons/lia"; 
+import { PiGithubLogoFill } from "react-icons/pi";
 
 function Footer() {
     const footerData = {
@@ -37,6 +38,12 @@ function Footer() {
             </span>
             <span className="hover:text-[aqua]  cursor-pointer">
                 All rights reserved
+            </span>
+        </div>
+        <div className="text-center flex flex-col gap-1 sm:flex-row sm:gap-2 justify-center mt-1">
+            <span>Designed By <span className="underline underline-offset-2 cursor-pointer hover:text-[aqua]">YESU</span>.</span>
+            <span className="flex items-center justify-center gap-2">source code is available in
+                <a href={"https://github.com/4727yesuraju/HELP-CENTER"} target={"_blank"}><PiGithubLogoFill className="text-slate-500 hover:text-slate-300"/></a>
             </span>
         </div>
     </div>

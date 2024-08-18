@@ -1,27 +1,31 @@
 # Help Center API Assignment
 
-## Instructions
+## Instructions to run locally
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/iAmritMalviya/fullstack-assignment
-   cd fullstack-assignment
+   git clone https://github.com/4727yesuraju/HELP-CENTER
+   cd HELP-CENTER
    ```
 
-2. **Frontend:**
-   - Create a React app in the `frontend` folder.
-   - Follow the instructions in `frontend.md` to complete the frontend.
+2. **command to run both frontend and api**
+   - In root folder run this command `npm run build`
+   - In browser paste this url `http://localhost:5000`
+   - Here almost completed. Below are optional.
 
-3. **Backend:**
-   - Create a Node.js app in the `backend` folder.
-   - Follow the `backend.md` instructions to complete the backend.
 
-4. **Push Your Work:**
-   - Push both the frontend and backend apps to the same repository.
-   - Make sure the repository is public.
+3. **run backend seperatly Backend:**
+   - In root folder run this command `npm install` to install all dependencies.
+   - After that `npm run start` to start server.
 
-5. **Submit Your Work:**
-   - Paste the GitHub repository link in the Google form you received after pushing your code.
+4. **run front end seperatly**
+   - From root folder to move to frontend folder i.e `cd frontend`.
+   - In frontend run this command `npm install` to install all dependencies.
+   - After that `npm run dev` to run frontend.
+   - In browser paste this url `http://localhost:3000/`
+
+5. **Live demo is available here**
+   - `https://help-center-9cwb.onrender.com/`
 
 ---
 

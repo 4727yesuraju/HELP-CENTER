@@ -28,7 +28,7 @@ function Main({setCards,filteredCards,setFilteredCards}) {
 
     useEffect(()=>{
       setTimeout(()=>{
-        if(count>2) lastRef.current?.scrollIntoView({behavior : "smooth"});
+        if(count>1) lastRef.current?.scrollIntoView({behavior : "smooth"});
         setCount(count+1);
       },100)
     },[filteredCards]);
