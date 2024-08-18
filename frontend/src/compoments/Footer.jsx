@@ -41,7 +41,7 @@ function Footer() {
             </span>
         </div>
         <div className="text-center flex flex-col gap-1 sm:flex-row sm:gap-2 justify-center mt-1">
-            <span>Designed By <span className="underline underline-offset-2 cursor-pointer hover:text-[aqua]">YESU RAJU</span>.</span>
+            <span>Designed By <a href="https://github.com/4727yesuraju" target='_blank' className="underline underline-offset-2 cursor-pointer hover:text-[aqua]">YESU RAJU</a>.</span>
             <span className="flex items-center justify-center gap-2">source code is available in
                 <a href={"https://github.com/4727yesuraju/HELP-CENTER"} target={"_blank"}><PiGithubLogoFill className="text-slate-500 hover:text-slate-300"/></a>
             </span>

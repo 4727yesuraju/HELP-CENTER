@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { TiArrowRight } from "react-icons/ti";
 
-function Search({cards,setFilteredCards}) {
-    const [search,setSearch] = useState("");
+function Search({cards,setFilteredCards,search,setSearch}) {
     const handleSearch = (e)=>{
         e.preventDefault();
         setFilteredCards(cards.filter(card=>card.title.toLocaleLowerCase().includes(search)))

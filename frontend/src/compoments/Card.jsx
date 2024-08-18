@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { MdDelete } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-function Card({card,setFilteredCards,lastRef}) {
+function Card({card,setFilteredCards,setCards,lastRef}) {
 
     const handleDelete = async (id,e)=>{
         e.preventDefault();
@@ -15,6 +15,7 @@ function Card({card,setFilteredCards,lastRef}) {
             const data = await res.json();
             if(!data.success) toast.error(data.error);
             setFilteredCards(prev=>prev.filter(item=>item._id!=id));
+            setCards(prev=>prev.filter(item=>item._id!=id));
 
             toast.success(data.message);
         } catch (error) {

@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { MdCancel } from 'react-icons/md'
 import Loader from './Loader';
 
-function Form({setShow,setFilteredCards}) {
+function Form({setShow,setFilteredCards,setCards,setIsScroll}) {
 
     const [formData,setFormData] = useState({});
     const [loading,setLoading] = useState(false);
@@ -17,7 +17,7 @@ function Form({setShow,setFilteredCards}) {
         e.preventDefault();
         if(!formData.title || !formData.description) return toast.error("title and description fields are required");
         setLoading(true);
-
+        setIsScroll(true);
         try {
             const res = await fetch('/api/cards/create',{
                 method : "POST",
@@ -29,12 +29,16 @@ function Form({setShow,setFilteredCards}) {
             const data = await res.json();
             if(!data.success) return toast.error(data.error);
             setFilteredCards(prev=>[...prev,{...data.card}]);
+            setCards(prev=>[...prev,{...data.card}]);
             setFormData({});
             setShow(false);
         } catch (error) {
             toast.error(error.message);
         }finally{
             setLoading(false);
+            setTimeout(()=>{
+                setIsScroll(false);
+            },100);
         }
     }
 

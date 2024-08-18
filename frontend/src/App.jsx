@@ -12,6 +12,7 @@ function App() {
 
   const [cards,setCards] = useState([]);
   const [filteredCards,setFilteredCards] = useState([]); // for search functionality
+  const [search,setSearch] = useState("");
 
   return (
     <div className={`flex h-screen flex-col`}>
@@ -19,8 +20,8 @@ function App() {
      
       <Routes>
          <Route path="/" element={ <>
-          <Search setFilteredCards={setFilteredCards} cards={cards}/>
-          <Main filteredCards={filteredCards} setFilteredCards={setFilteredCards} setCards={setCards} />
+          <Search setFilteredCards={setFilteredCards} cards={cards} search={search} setSearch={setSearch}/>
+          <Main filteredCards={filteredCards} setFilteredCards={setFilteredCards} setCards={setCards} search={search}/>
           </> } />
          <Route path="/:id" element={<CardPage />} />
       </Routes>
